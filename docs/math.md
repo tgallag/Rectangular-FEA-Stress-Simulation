@@ -1,4 +1,4 @@
-﻿# Stress Math Notes
+# Stress Math Notes
 
 This page starts from the smallest pieces and builds toward the quantities compared against the ANSYS result.
 
@@ -116,3 +116,4 @@ Fill this in after the final solve:
 | Maximum equivalent stress | TBD | TBD | TBD |
 | Maximum deformation | TBD | TBD | TBD |
 | Location of max stress | fixed/support region expected | TBD | TBD |
+

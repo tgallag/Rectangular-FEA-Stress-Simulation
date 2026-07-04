@@ -1,4 +1,4 @@
-﻿# Assets
+# Assets
 
 README-ready visuals only.
 
@@ -6,3 +6,4 @@ README-ready visuals only.
 - `rectangle-cube-animation-poster.png`: poster frame for the animation
 
 Keep raw WMV exports and repeated test renders out of Git.
+

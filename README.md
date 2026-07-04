@@ -1,4 +1,4 @@
-﻿# Rectangular FEA Stress Simulation
+# Rectangular FEA Stress Simulation
 
 Small ANSYS finite-element project showing stress and deformation in a 2 x 6 rectangular solid under static loading. The project was inspired by Zein Zreik's 3-DOF parallel robot project, but this is a separate FEA study.
 
@@ -26,3 +26,4 @@ simulation/   curated ANSYS setup notes and reproducibility files
 - Add the exact force, support, material, and mesh settings
 - Fill in the final numeric math checks
 - Add final screenshots or plots only if they clarify the result
+
