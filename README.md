@@ -13,16 +13,29 @@ Small ANSYS finite-element project showing stress and deformation in a 2 mm x 6 
 - Math notes: [docs/math.md](docs/math.md)
 - Animation: [rectangle_cube_animation.gif](rectangle_cube_animation.gif)
 
+## Dimensions
+
+[![3D dimensioned beam view](assets/rectangular_beam_spaceclaim.png)](docs/rectangular_beam_spaceclaim.pdf)
+
+[3D dimensioned view PDF](docs/rectangular_beam_spaceclaim.pdf)
+
+[![Engineering drawing with beam dimensions](assets/rectangular_beam_dimensions.png)](docs/rectangular_beam_dimensions.pdf)
+
+[Dimensioned drawing PDF](docs/rectangular_beam_dimensions.pdf)
+
 ## Files
 
 ```text
-rectangle_cube_animation.gif   click-to-preview simulation animation
-docs/                          formulas, assumptions, and hand-calculation notes
-simulation/                    curated ANSYS setup notes and reproducibility files
-assets/                        optional screenshots or final plots
+rectangle_cube_animation.gif          click-to-preview simulation animation
+assets/rectangular_beam_spaceclaim.png  3D dimensioned beam preview
+assets/rectangular_beam_dimensions.png  drawing sheet preview
+docs/math.md                         formulas, assumptions, and hand-calculation notes
+docs/rectangular_beam_spaceclaim.pdf  3D dimensioned beam PDF
+docs/rectangular_beam_dimensions.pdf  dimensioned drawing PDF
+simulation/                          curated ANSYS setup notes and reproducibility files
 ```
 
 ## Next
 
-- Add final screenshots or plots only if they clarify the result
+- Add final stress/deformation screenshots or plots only if they clarify the result
 - Decide whether any small ANSYS setup files should be included for reproducibility
