@@ -1,0 +1,188 @@
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.6em}{}
+
+\newcommand{\unit}[1]{\,\mathrm{#1}}
+\newcommand{\MPa}{\unit{MPa}}
+\newcommand{\GPa}{\unit{GPa}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE Rectangular Beam Stress Calculation Notes}\\[4pt]
+{\large ANSYS Static Structural Hand Check}\\[6pt]
+\end{center}
+
+\section{Purpose}
+
+This document builds the hand calculation from the smallest quantities and compares it with the ANSYS result for the rectangular cantilever beam model. The goal is not to replace the finite-element result, but to check that the simulated stress and deformation are in the expected range.
+
+\section{Known Model Values}
+
+The values below were extracted from the ANSYS Workbench/SpaceClaim model and MAPDL solve files. ANSYS uses MKS units internally.
+
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{0.16\linewidth} p{0.46\linewidth} p{0.26\linewidth}}
+\toprule
+Symbol & Meaning & Value \\
+\midrule
+$L$ & Beam length along the $y$ direction & $6\unit{mm}=0.006\unit{m}$ \\
+$w$ & Width along the $x$ direction & $2\unit{mm}=0.002\unit{m}$ \\
+$t$ & Thickness along the $z$ direction & $1.25\unit{mm}=0.00125\unit{m}$ \\
+$F_x$ & End force in the $+x$ direction & $100\unit{N}$ \\
+$E$ & Young's modulus for structural steel & $200\GPa=200\times10^9\unit{Pa}$ \\
+$\nu$ & Poisson's ratio & $0.30$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Boundary conditions: the $y=0$ face is fixed, and the load is applied on the $y=L$ face.
+
+\section{Cross-Section Area}
+
+Start with the rectangular cross-section. Area is width times thickness:
+
+\begin{equation}
+A = w t
+\end{equation}
+
+Substitute the model dimensions:
+
+\begin{align}
+A &= (0.002)(0.00125) \\
+  &= 2.50\times10^{-6}\unit{m^2}
+\end{align}
+
+\section{Average Applied Traction}
+
+The $100\unit{N}$ force is applied over the end face. The average surface traction is force divided by area:
+
+\begin{equation}
+p = \frac{F}{A}
+\end{equation}
+
+\begin{align}
+p &= \frac{100}{2.50\times10^{-6}} \\
+  &= 4.00\times10^7\unit{Pa} \\
+  &= 40\MPa
+\end{align}
+
+This matches the pressure magnitude written in the ANSYS solver input.
+
+\section{Cantilever Bending Moment}
+
+For a first hand check, treat the part as a cantilever beam with an end load. The maximum bending moment occurs at the fixed face:
+
+\begin{equation}
+M_{\max}=F L
+\end{equation}
+
+\begin{align}
+M_{\max} &= (100)(0.006) \\
+         &= 0.600\unit{N\,m}
+\end{align}
+
+\section{Area Moment of Inertia}
+
+The beam axis is along $y$. The force is along $x$, so the beam bends about the $z$ axis. For a rectangular section:
+
+\begin{equation}
+I_z = \frac{t w^3}{12}
+\end{equation}
+
+\begin{align}
+I_z &= \frac{(0.00125)(0.002)^3}{12} \\
+    &= 8.33\times10^{-13}\unit{m^4}
+\end{align}
+
+The farthest distance from the neutral axis is half the width:
+
+\begin{equation}
+c = \frac{w}{2}=\frac{0.002}{2}=0.001\unit{m}
+\end{equation}
+
+\section{Maximum Bending Stress}
+
+The basic bending stress equation is:
+
+\begin{equation}
+\sigma_b = \frac{M c}{I}
+\end{equation}
+
+Using the maximum moment and $I_z$:
+
+\begin{align}
+\sigma_{b,\max} &= \frac{M_{\max}c}{I_z} \\
+&= \frac{(0.600)(0.001)}{8.33\times10^{-13}} \\
+&= 7.20\times10^8\unit{Pa} \\
+&= 720\MPa
+\end{align}
+
+This is the simple beam-theory estimate. It assumes ideal beam behavior and does not fully capture the 3D stress concentration at the fixed face.
+
+\section{Tip Deflection Check}
+
+For a cantilever beam with an end load, the tip deflection is:
+
+\begin{equation}
+\delta_{\max}=\frac{F L^3}{3 E I_z}
+\end{equation}
+
+\begin{align}
+\delta_{\max} &= \frac{(100)(0.006)^3}{3(200\times10^9)(8.33\times10^{-13})} \\
+&= 4.32\times10^{-5}\unit{m} \\
+&= 0.0432\unit{mm}
+\end{align}
+
+\section{Equivalent Stress}
+
+ANSYS equivalent stress is von Mises stress. For a general 3D stress state:
+
+\begin{equation}
+\sigma_{vm}=
+\sqrt{\frac{(\sigma_x-\sigma_y)^2+(\sigma_y-\sigma_z)^2+(\sigma_z-\sigma_x)^2+6(\tau_{xy}^2+\tau_{yz}^2+\tau_{zx}^2)}{2}}
+\end{equation}
+
+For a mostly one-direction bending stress state, the von Mises stress is close to the bending stress magnitude:
+
+\begin{equation}
+\sigma_{vm}\approx |\sigma_b|
+\end{equation}
+
+\section{ANSYS Comparison}
+
+\begin{center}
+\begin{tabular}{p{0.34\linewidth} p{0.20\linewidth} p{0.20\linewidth} p{0.16\linewidth}}
+\toprule
+Quantity & Hand estimate & ANSYS result & Difference \\
+\midrule
+Maximum equivalent stress & $720\MPa$ & $861.3\MPa$ & $+19.6\%$ \\
+Estimated stress bound & $720\MPa$ & $917.7\MPa$ & $+27.5\%$ \\
+Maximum deformation & $0.0432\unit{mm}$ & $0.0475\unit{mm}$ & $+10.0\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Result locations from the MAPDL result file:
+
+\begin{itemize}
+  \item Maximum deformation occurs near the free end, node 671, close to $(x,y,z)=(0,6,0.625)\unit{mm}$.
+  \item Maximum equivalent stress occurs near the fixed-face corner region, including nodes 547 and 592.
+\end{itemize}
+
+The ANSYS stress is higher than the simple beam estimate because the part is short relative to its cross-section and the fixed support creates a local 3D stress concentration. The deformation comparison is closer because the global bending stiffness is captured reasonably well by the cantilever approximation.
+
+\section{Summary}
+
+The hand calculation predicts the correct order of magnitude for both deformation and stress. The final comparison supports the finite-element result: the model behaves like a very small cantilever beam, with maximum deformation at the free end and maximum equivalent stress near the fixed support.
+
+\end{document}

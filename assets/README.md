@@ -2,6 +2,7 @@
 
 README-ready visuals only.
 
+- `rectangular_beam_calculations.png`: first-page preview rendered from the calculation PDF
 - `rectangular_beam_spaceclaim.png`: preview rendered from the 3D dimensioned SpaceClaim PDF
 - `rectangular_beam_dimensions.png`: preview rendered from the dimensioned drawing PDF
 

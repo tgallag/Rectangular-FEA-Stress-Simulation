@@ -39,3 +39,12 @@ palette.png
 *.mp4
 *.mov
 *.webm
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz

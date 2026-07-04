@@ -11,7 +11,17 @@ Small ANSYS finite-element project showing stress and deformation in a 2 mm x 6 
 - Load: 100 N in the +X direction on the free-end face
 - Result focus: equivalent stress and total deformation
 - Math notes: [docs/math.md](docs/math.md)
+- Calculation PDF: [docs/rectangular_beam_calculations.pdf](docs/rectangular_beam_calculations.pdf)
 - Animation: [rectangle_cube_animation.gif](rectangle_cube_animation.gif)
+
+## Calculations
+
+[![Rectangular beam calculation preview](assets/rectangular_beam_calculations.png)](docs/rectangular_beam_calculations.pdf)
+
+The calculation document starts from units and geometry, then builds through area, applied traction, bending moment, section inertia, bending stress, deflection, von Mises stress, and ANSYS comparison.
+
+- [Calculation PDF](docs/rectangular_beam_calculations.pdf)
+- [LaTeX source](docs/rectangular_beam_calculations.tex)
 
 ## Dimensions
 
@@ -26,13 +36,16 @@ Small ANSYS finite-element project showing stress and deformation in a 2 mm x 6 
 ## Files
 
 ```text
-rectangle_cube_animation.gif          click-to-preview simulation animation
-assets/rectangular_beam_spaceclaim.png  3D dimensioned beam preview
-assets/rectangular_beam_dimensions.png  drawing sheet preview
-docs/math.md                         formulas, assumptions, and hand-calculation notes
-docs/rectangular_beam_spaceclaim.pdf  3D dimensioned beam PDF
-docs/rectangular_beam_dimensions.pdf  dimensioned drawing PDF
-simulation/                          curated ANSYS setup notes and reproducibility files
+rectangle_cube_animation.gif             click-to-preview simulation animation
+assets/rectangular_beam_calculations.png  first-page calculation preview
+assets/rectangular_beam_spaceclaim.png    3D dimensioned beam preview
+assets/rectangular_beam_dimensions.png    drawing sheet preview
+docs/math.md                            formula summary for GitHub reading
+docs/rectangular_beam_calculations.tex   LaTeX calculation source
+docs/rectangular_beam_calculations.pdf   full calculation PDF
+docs/rectangular_beam_spaceclaim.pdf     3D dimensioned beam PDF
+docs/rectangular_beam_dimensions.pdf     dimensioned drawing PDF
+simulation/                             curated ANSYS setup notes and reproducibility files
 ```
 
 ## Next

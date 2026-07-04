@@ -1,5 +1,9 @@
 # Stress Math Notes
 
+Full calculation PDF: [rectangular_beam_calculations.pdf](rectangular_beam_calculations.pdf)
+
+LaTeX source: [rectangular_beam_calculations.tex](rectangular_beam_calculations.tex)
+
 Values below were extracted from the ANSYS Workbench project `RecangularCubeBeam` and checked against the MAPDL result file.
 
 ## 1. Model Values
@@ -140,3 +144,4 @@ Result locations from the MAPDL result file:
 - Maximum equivalent stress: fixed face corner region, including nodes 547 and 592
 
 The ANSYS values are higher than the simple hand check because the model is short relative to its cross-section and the fixed support creates a 3D stress concentration that beam theory does not fully capture.
+
