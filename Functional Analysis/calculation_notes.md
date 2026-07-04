@@ -1,8 +1,8 @@
 # Stress Math Notes
 
-Full calculation PDF: [rectangular_beam_calculations.pdf](rectangular_beam_calculations.pdf)
+Full calculation PDF: [Calculations/rectangular_beam_calculations.pdf](Calculations/rectangular_beam_calculations.pdf)
 
-LaTeX source: [rectangular_beam_calculations.tex](rectangular_beam_calculations.tex)
+LaTeX source: [Calculations/rectangular_beam_calculations.tex](Calculations/rectangular_beam_calculations.tex)
 
 Values below were extracted from the ANSYS Workbench project `RecangularCubeBeam` and checked against the MAPDL result file.
 
@@ -35,7 +35,7 @@ $$
 A = (0.002)(0.00125) = 2.50 \times 10^{-6}\ \text{m}^2
 $$
 
-The average applied surface traction is:
+## 3. Applied Surface Traction
 
 $$
 p = \frac{F}{A}
@@ -45,9 +45,7 @@ $$
 p = \frac{100}{2.50 \times 10^{-6}} = 4.00 \times 10^7\ \text{Pa} = 40\ \text{MPa}
 $$
 
-This matches the pressure value written in the ANSYS solver input.
-
-## 3. Bending Moment
+## 4. Bending Moment
 
 Treat the model as a cantilever beam for a first hand-check.
 
@@ -59,7 +57,7 @@ $$
 M_{\max} = (100)(0.006) = 0.600\ \text{N}\cdot\text{m}
 $$
 
-## 4. Area Moment of Inertia
+## 5. Area Moment of Inertia
 
 The beam axis is $y$. Since the force is in $x$, the beam bends about the $z$ axis.
 
@@ -72,13 +70,11 @@ I_z = \frac{(0.00125)(0.002)^3}{12}
 = 8.33 \times 10^{-13}\ \text{m}^4
 $$
 
-The farthest distance from the neutral axis is:
-
 $$
 c = \frac{w}{2} = 0.001\ \text{m}
 $$
 
-## 5. Maximum Bending Stress
+## 6. Maximum Bending Stress
 
 $$
 \sigma_{b,\max} = \frac{M_{\max} c}{I_z}
@@ -91,11 +87,7 @@ $$
 = 720\ \text{MPa}
 $$
 
-This is a simple beam-theory estimate. It does not capture the full 3D stress concentration at the fixed face.
-
-## 6. Tip Deflection Check
-
-For a cantilever with an end load:
+## 7. Tip Deflection Check
 
 $$
 \delta_{\max} = \frac{F L^3}{3 E I_z}
@@ -108,7 +100,7 @@ $$
 = 0.0432\ \text{mm}
 $$
 
-## 7. Equivalent Stress
+## 8. Equivalent Stress
 
 ANSYS equivalent stress is von Mises stress:
 
@@ -124,13 +116,13 @@ $$
 }
 $$
 
-For a mostly one-direction bending stress state, this is close to the bending stress magnitude:
+For a mostly one-direction bending stress state:
 
 $$
 \sigma_{vm} \approx |\sigma_b|
 $$
 
-## 8. ANSYS Comparison
+## 9. ANSYS Comparison
 
 | Quantity | Hand estimate | ANSYS result | Difference |
 | --- | ---: | ---: | ---: |
@@ -138,10 +130,4 @@ $$
 | Estimated stress bound | $720\ \text{MPa}$ | $917.7\ \text{MPa}$ | $+27.5\%$ |
 | Maximum deformation | $0.0432\ \text{mm}$ | $0.0475\ \text{mm}$ | $+10.0\%$ |
 
-Result locations from the MAPDL result file:
-
-- Maximum deformation: free end, node 671, near $(x,y,z)=(0,6,0.625)\ \text{mm}$
-- Maximum equivalent stress: fixed face corner region, including nodes 547 and 592
-
 The ANSYS values are higher than the simple hand check because the model is short relative to its cross-section and the fixed support creates a 3D stress concentration that beam theory does not fully capture.
-

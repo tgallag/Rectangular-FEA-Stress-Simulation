@@ -1,54 +1,58 @@
 # Rectangular FEA Stress Simulation
 
-Small ANSYS finite-element project showing stress and deformation in a 2 mm x 6 mm x 1.25 mm rectangular beam under a 100 N static end load. The project was inspired by Zein Zreik's 3-DOF parallel robot project, but this is a separate FEA study.
+ANSYS finite-element study of a 2 mm x 6 mm x 1.25 mm structural-steel cantilever beam under a 100 N static end load.
 
-[![Rectangular FEA stress animation](rectangle_cube_animation.gif)](rectangle_cube_animation.gif)
+[![Rectangular FEA stress animation](Structural%20Analysis/Results/rectangle_cube_animation.gif)](Structural%20Analysis/Results/rectangle_cube_animation.gif)
 
-## Project
+Project inspiration: [Zein Zreik's 3-DOF parallel robot project](https://github.com/ZeinZreik/Design-and-Implementation-of-a-3-DOF-Parallel-Robot).
 
-- Geometry: rectangular cantilever beam, fixed at one end
-- Material: structural steel
-- Load: 100 N in the +X direction on the free-end face
+## Project Scope
+
+- Geometry: rectangular cantilever beam
+- Material: structural steel, S275N
+- Load case: 100 N applied in the +X direction on the free-end face
+- Boundary condition: fixed support at the opposite end
 - Result focus: equivalent stress and total deformation
-- Math notes: [docs/math.md](docs/math.md)
-- Calculation PDF: [docs/rectangular_beam_calculations.pdf](docs/rectangular_beam_calculations.pdf)
-- Animation: [rectangle_cube_animation.gif](rectangle_cube_animation.gif)
 
-## Calculations
-
-[![Rectangular beam calculation preview](assets/rectangular_beam_calculations.png)](docs/rectangular_beam_calculations.pdf)
-
-The calculation document starts from units and geometry, then builds through area, applied traction, bending moment, section inertia, bending stress, deflection, von Mises stress, and ANSYS comparison.
-
-- [Calculation PDF](docs/rectangular_beam_calculations.pdf)
-- [LaTeX source](docs/rectangular_beam_calculations.tex)
-
-## Dimensions
-
-[![3D dimensioned beam view](assets/rectangular_beam_spaceclaim.png)](docs/rectangular_beam_spaceclaim.pdf)
-
-[3D dimensioned view PDF](docs/rectangular_beam_spaceclaim.pdf)
-
-[![Engineering drawing with beam dimensions](assets/rectangular_beam_dimensions.png)](docs/rectangular_beam_dimensions.pdf)
-
-[Dimensioned drawing PDF](docs/rectangular_beam_dimensions.pdf)
-
-## Files
+## Project Organization
 
 ```text
-rectangle_cube_animation.gif             click-to-preview simulation animation
-assets/rectangular_beam_calculations.png  first-page calculation preview
-assets/rectangular_beam_spaceclaim.png    3D dimensioned beam preview
-assets/rectangular_beam_dimensions.png    drawing sheet preview
-docs/math.md                            formula summary for GitHub reading
-docs/rectangular_beam_calculations.tex   LaTeX calculation source
-docs/rectangular_beam_calculations.pdf   full calculation PDF
-docs/rectangular_beam_spaceclaim.pdf     3D dimensioned beam PDF
-docs/rectangular_beam_dimensions.pdf     dimensioned drawing PDF
-simulation/                             curated ANSYS setup notes and reproducibility files
+Design/                 geometry drawings and dimensioned model views
+Functional Analysis/    hand calculations, assumptions, and LaTeX math report
+Structural Analysis/    ANSYS setup notes and stress/deformation result media
+Programming/            reserved for scripts or code if added later
+Report/                 final README/report figures and presentation visuals
 ```
 
-## Next
+## Key Deliverables
 
-- Add final stress/deformation screenshots or plots only if they clarify the result
-- Decide whether any small ANSYS setup files should be included for reproducibility
+### Design
+
+[![3D dimensioned beam view](Report/Figures/rectangular_beam_spaceclaim.png)](Design/Drawings/rectangular_beam_spaceclaim.pdf)
+
+- [3D dimensioned view PDF](Design/Drawings/rectangular_beam_spaceclaim.pdf)
+- [Dimensioned drawing PDF](Design/Drawings/rectangular_beam_dimensions.pdf)
+
+### Functional Analysis
+
+[![Calculation preview](Report/Figures/rectangular_beam_calculations.png)](Functional%20Analysis/Calculations/rectangular_beam_calculations.pdf)
+
+- [Calculation PDF](Functional%20Analysis/Calculations/rectangular_beam_calculations.pdf)
+- [LaTeX source](Functional%20Analysis/Calculations/rectangular_beam_calculations.tex)
+- [Markdown calculation notes](Functional%20Analysis/calculation_notes.md)
+
+### Structural Analysis
+
+- [Stress animation GIF](Structural%20Analysis/Results/rectangle_cube_animation.gif)
+
+## Results Snapshot
+
+| Quantity | Hand estimate | ANSYS result |
+| --- | ---: | ---: |
+| Maximum equivalent stress | 720 MPa | 861.3 MPa |
+| Estimated stress bound | 720 MPa | 917.7 MPa |
+| Maximum deformation | 0.0432 mm | 0.0475 mm |
+
+The ANSYS stress is higher than the beam-theory estimate because the fixed support creates a local 3D stress concentration. The deformation comparison is closer because the global cantilever stiffness is captured reasonably well by the hand calculation.
+
+
