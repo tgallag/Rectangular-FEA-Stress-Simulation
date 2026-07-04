@@ -2,9 +2,7 @@
 
 Small ANSYS finite-element project showing stress and deformation in a 2 x 6 rectangular solid under static loading. The project was inspired by Zein Zreik's 3-DOF parallel robot project, but this is a separate FEA study.
 
-<video src="assets/rectangle-cube-animation.mp4" poster="assets/rectangle-cube-animation-poster.png" controls width="100%">
-  Simulation animation: assets/rectangle-cube-animation.mp4
-</video>
+[![Rectangular FEA stress animation](rectangle_cube_animation.gif)](rectangle_cube_animation.gif)
 
 ## Project
 
@@ -12,13 +10,15 @@ Small ANSYS finite-element project showing stress and deformation in a 2 x 6 rec
 - Tool: ANSYS Discovery / Mechanical
 - Result focus: equivalent stress and deformation
 - Math notes: [docs/math.md](docs/math.md)
+- Animation: [rectangle_cube_animation.gif](rectangle_cube_animation.gif)
 
 ## Files
 
 ```text
-assets/       README media and final result visuals
-docs/         formulas, assumptions, and hand-calculation notes
-simulation/   curated ANSYS setup notes and reproducibility files
+rectangle_cube_animation.gif   click-to-preview simulation animation
+docs/                          formulas, assumptions, and hand-calculation notes
+simulation/                    curated ANSYS setup notes and reproducibility files
+assets/                        optional screenshots or final plots
 ```
 
 ## Next
@@ -26,4 +26,3 @@ simulation/   curated ANSYS setup notes and reproducibility files
 - Add the exact force, support, material, and mesh settings
 - Fill in the final numeric math checks
 - Add final screenshots or plots only if they clarify the result
-

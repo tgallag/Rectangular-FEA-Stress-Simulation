@@ -35,3 +35,7 @@ dp*/
 *.wmv
 palette.png
 
+# Scratch video exports; use GIF for GitHub preview in this repo
+*.mp4
+*.mov
+*.webm

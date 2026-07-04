@@ -1,9 +1,5 @@
 # Assets
 
-README-ready visuals only.
+Optional screenshots, plots, and final figures can go here.
 
-- `rectangle-cube-animation.mp4`: GitHub-previewable stress animation
-- `rectangle-cube-animation-poster.png`: poster frame for the animation
-
-Keep raw WMV exports and repeated test renders out of Git.
-
+The main simulation animation is kept at the repo root as `rectangle_cube_animation.gif` so it is easy to find and preview directly on GitHub.
