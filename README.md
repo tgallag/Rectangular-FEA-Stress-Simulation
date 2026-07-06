@@ -1,6 +1,6 @@
 # Design and Implementation of a Rectangular FEA Stress Simulation
 
-An end-to-end mechanics project for modeling, hand-checking, and visualizing a rectangular cantilever beam under static load. The repository includes dimensioned SpaceClaim drawings, ANSYS static-structural result media, LaTeX calculation notes, and report-ready figures for a small structural-steel beam.
+An end-to-end mechanics project for modeling, hand-checking, and visualizing a rectangular cantilever beam under static load. The repository includes source model files, dimensioned SpaceClaim drawings, ANSYS static-structural result media, LaTeX calculation notes, and report-ready figures for a small structural-steel beam.
 
 This project was inspired by [Zein Zreik's 3-DOF parallel robot project](https://github.com/ZeinZreik/Design-and-Implementation-of-a-3-DOF-Parallel-Robot), but the engineering focus here is finite-element stress validation rather than robot kinematics and control.
 
@@ -33,7 +33,7 @@ The model is a rectangular structural-steel cantilever beam. One end face is fix
 
 The implementation connects three parts:
 
-- Design: dimensioned beam geometry and drawing exports
+- Design: source model files, dimensioned beam geometry, and drawing exports
 - Functional analysis: beam-theory calculations and unit-consistent formulas
 - Structural analysis: ANSYS static-structural result artifacts and comparison values
 
@@ -78,6 +78,7 @@ flowchart LR
 
 ```text
 Design/
+  Source Models/                    Discovery and SpaceClaim source files
   Drawings/                         Dimensioned SpaceClaim and drawing PDFs
 Functional Analysis/
   calculation_notes.md              GitHub-readable formula notes
@@ -167,6 +168,7 @@ Key file:
 
 - Dimensioned 3D beam view PDF
 - Dimensioned engineering drawing PDF
+- ANSYS Discovery and SpaceClaim source model files
 - LaTeX calculation PDF with formulas and comparison values
 - Handwritten calculation scan used as supporting work
 - GitHub-previewable stress/deformation animation
@@ -177,4 +179,5 @@ Key file:
 - Start with [Functional Analysis/Calculations/rectangular_beam_calculations.pdf](Functional%20Analysis/Calculations/rectangular_beam_calculations.pdf) for the math build-up.
 - Use [Design/Drawings/rectangular_beam_spaceclaim.pdf](Design/Drawings/rectangular_beam_spaceclaim.pdf) for the 3D dimensioned model view.
 - Use [Design/Drawings/rectangular_beam_dimensions.pdf](Design/Drawings/rectangular_beam_dimensions.pdf) for the drawing-sheet dimensions.
+- Open [Design/Source Models/my_first_rectangle_cube.dsco](Design/Source%20Models/my_first_rectangle_cube.dsco) or [Design/Source Models/rectangular_beam_spaceclaim_slide1.scdocx](Design/Source%20Models/rectangular_beam_spaceclaim_slide1.scdocx) for the original design files.
 - Use [Structural Analysis/Results/rectangle_cube_animation.gif](Structural%20Analysis/Results/rectangle_cube_animation.gif) for the result animation.
