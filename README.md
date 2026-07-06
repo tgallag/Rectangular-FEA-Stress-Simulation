@@ -129,6 +129,17 @@ Key files:
 - [Handwritten calculation scan](Functional%20Analysis/Calculations/rectangular_beam_handwritten_calculations.pdf)
 - [Markdown calculation notes](Functional%20Analysis/calculation_notes.md)
 
+### Handwritten Notes Preview
+
+Click any page to open the full handwritten scan.
+
+<p align="center">
+  <a href="Functional%20Analysis/Calculations/rectangular_beam_handwritten_calculations.pdf"><img src="Report/Figures/handwritten_calculation_page_1.jpg" width="23%" alt="Handwritten calculation page 1"></a>
+  <a href="Functional%20Analysis/Calculations/rectangular_beam_handwritten_calculations.pdf"><img src="Report/Figures/handwritten_calculation_page_2.jpg" width="23%" alt="Handwritten calculation page 2"></a>
+  <a href="Functional%20Analysis/Calculations/rectangular_beam_handwritten_calculations.pdf"><img src="Report/Figures/handwritten_calculation_page_3.jpg" width="23%" alt="Handwritten calculation page 3"></a>
+  <a href="Functional%20Analysis/Calculations/rectangular_beam_handwritten_calculations.pdf"><img src="Report/Figures/handwritten_calculation_page_4.jpg" width="23%" alt="Handwritten calculation page 4"></a>
+</p>
+
 ## Structural Analysis
 
 The ANSYS model validates the same beam under the same load case used in the hand calculation. The result of interest is not just whether the beam bends, but how closely the FEA stress and displacement compare with the simple cantilever estimate.
@@ -160,4 +171,3 @@ Key file:
 - Use [Design/Drawings/rectangular_beam_spaceclaim.pdf](Design/Drawings/rectangular_beam_spaceclaim.pdf) for the 3D dimensioned model view.
 - Use [Design/Drawings/rectangular_beam_dimensions.pdf](Design/Drawings/rectangular_beam_dimensions.pdf) for the drawing-sheet dimensions.
 - Use [Structural Analysis/Results/rectangle_cube_animation.gif](Structural%20Analysis/Results/rectangle_cube_animation.gif) for the result animation.
-
