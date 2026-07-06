@@ -9,7 +9,6 @@ This project was inspired by [Zein Zreik's 3-DOF parallel robot project](https:/
 <p align="center">
   <a href="Design/Drawings/rectangular_beam_spaceclaim.pdf"><img src="Report/Figures/rectangular_beam_spaceclaim.png" width="32%" alt="3D dimensioned beam view"></a>
   <a href="Design/Drawings/rectangular_beam_dimensions.pdf"><img src="Report/Figures/rectangular_beam_dimensions.png" width="32%" alt="Dimensioned drawing sheet"></a>
-  <a href="Functional%20Analysis/Calculations/rectangular_beam_calculations.pdf"><img src="Report/Figures/rectangular_beam_calculations.png" width="32%" alt="Calculation PDF preview"></a>
 </p>
 
 ## Problem
@@ -121,6 +120,14 @@ $$
 $$
 
 ANSYS reports equivalent stress using the von Mises stress definition. For this mostly bending-dominated case, the hand estimate uses bending stress as the first comparison value, then checks the FEA stress increase caused by the fixed-support stress concentration.
+
+### Calculation PDF Preview
+
+Click the preview to open the full typed calculation PDF.
+
+<p align="center">
+  <a href="Functional%20Analysis/Calculations/rectangular_beam_calculations.pdf"><img src="Report/Figures/rectangular_beam_calculations.png" width="38%" alt="Calculation PDF preview"></a>
+</p>
 
 Key files:
 
