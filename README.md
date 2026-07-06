@@ -126,6 +126,7 @@ Key files:
 
 - [Calculation PDF](Functional%20Analysis/Calculations/rectangular_beam_calculations.pdf)
 - [LaTeX source](Functional%20Analysis/Calculations/rectangular_beam_calculations.tex)
+- [Handwritten calculation scan](Functional%20Analysis/Calculations/rectangular_beam_handwritten_calculations.pdf)
 - [Markdown calculation notes](Functional%20Analysis/calculation_notes.md)
 
 ## Structural Analysis
@@ -149,6 +150,7 @@ Key file:
 - Dimensioned 3D beam view PDF
 - Dimensioned engineering drawing PDF
 - LaTeX calculation PDF with formulas and comparison values
+- Handwritten calculation scan used as supporting work
 - GitHub-previewable stress/deformation animation
 - Organized engineering repository with design, analysis, structural results, programming placeholder, and report figures
 
@@ -158,3 +160,4 @@ Key file:
 - Use [Design/Drawings/rectangular_beam_spaceclaim.pdf](Design/Drawings/rectangular_beam_spaceclaim.pdf) for the 3D dimensioned model view.
 - Use [Design/Drawings/rectangular_beam_dimensions.pdf](Design/Drawings/rectangular_beam_dimensions.pdf) for the drawing-sheet dimensions.
 - Use [Structural Analysis/Results/rectangle_cube_animation.gif](Structural%20Analysis/Results/rectangle_cube_animation.gif) for the result animation.
+

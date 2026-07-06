@@ -1,6 +1,7 @@
 # Stress Math Notes
 
 Full calculation PDF: [Calculations/rectangular_beam_calculations.pdf](Calculations/rectangular_beam_calculations.pdf)
+Handwritten calculation scan: [Calculations/rectangular_beam_handwritten_calculations.pdf](Calculations/rectangular_beam_handwritten_calculations.pdf)
 
 LaTeX source: [Calculations/rectangular_beam_calculations.tex](Calculations/rectangular_beam_calculations.tex)
 
@@ -131,3 +132,4 @@ $$
 | Maximum deformation | $0.0432\ \text{mm}$ | $0.0475\ \text{mm}$ | $+10.0\%$ |
 
 The ANSYS values are higher than the simple hand check because the model is short relative to its cross-section and the fixed support creates a 3D stress concentration that beam theory does not fully capture.
+
