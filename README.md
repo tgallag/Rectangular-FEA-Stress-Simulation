@@ -2,8 +2,6 @@
 
 An end-to-end mechanics project for modeling, hand-checking, and visualizing a rectangular cantilever beam under static load. The repository includes source model files, dimensioned SpaceClaim drawings, ANSYS static-structural result media, LaTeX calculation notes, and report-ready figures for a small structural-steel beam.
 
-This project was inspired by [Zein Zreik's 3-DOF parallel robot project](https://github.com/ZeinZreik/Design-and-Implementation-of-a-3-DOF-Parallel-Robot), but the engineering focus here is finite-element stress validation rather than robot kinematics and control.
-
 [![Rectangular FEA stress animation](Structural%20Analysis/Results/rectangle_cube_animation.gif)](Structural%20Analysis/Results/rectangle_cube_animation.gif)
 
 <p align="center">
